@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        h1 { color: #2C3E50; }
+        .result { margin: 20px; padding: 20px; border: 1px solid #2C3E50; border-radius: 5px; }
+        a { text-decoration: none; color: #2980B9; }
+    </style>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    <div class="result">
+        <h2>{{ prediction }}</h2>
+        <h3>Feature Impact Visualizations:</h3>
+        <ul>
+            <li><a href="{{ url_for('static', filename='graphs/feature_importance.png') }}" target="_blank">Feature Importance</a></li>
+            <li><a href="{{ url_for('static', filename='graphs/target_distribution.png') }}" target="_blank">Target Distribution</a></li>
+            <li><a href="{{ url_for('static', filename='graphs/heatmap.png') }}" target="_blank">Feature Correlation Heatmap</a></li>
+            <li><a href="{{ url_for('static', filename='graphs/shap_summary.png') }}" target="_blank">SHAP Summary Plot</a></li>
+            <li><a href="{{ url_for('static', filename='graphs/shap_force.html') }}" target="_blank">SHAP Force Plot</a></li>
+        </ul>
+    </div>
+    <a href="{{ url_for('home') }}">Go back to Home</a>
+</body>
+</html>
